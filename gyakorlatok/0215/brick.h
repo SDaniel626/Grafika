@@ -8,7 +8,7 @@ typedef struct Brick
     double z;
 } Brick;
 
-void set_size(Brick brick, double x, double y, double z);
+void set_size(Brick* brick, double x, double y, double z);
 
 double calc_volume (Brick* brick);
 

@@ -1,13 +1,13 @@
-#include <brick.h>
+#include "brick.h"
 #include <stdio.h>
 
 void set_size(Brick* brick, double x, double y, double z)
 {
     if(x>0 && y>0 && z>0)
     {
-        brick.x = x;
-        brick.y = y;
-        brick.z = z;
+        brick->x = x;
+        brick->y = y;
+        brick->z = z;
     }
     else
     {
@@ -17,7 +17,7 @@ void set_size(Brick* brick, double x, double y, double z)
 
 double calc_volume (Brick* brick)
 {
-    double V = brick->x*brick->y*brick->z;
+    double V = brick->x * brick->y * brick->z;
     return V;
 }
 
