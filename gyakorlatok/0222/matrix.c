@@ -113,18 +113,21 @@ void rotate(float matrix[3][3], float phi)
 	matrix[1][1] = (float)cos(phi * M_PI / 180.0);
 }
 
-typedef struct {
+typedef struct 
+{
     float matrices[5][3][3]; 
     int stackIndex;          
 } MatrixStack;
 
 
-void initialize_matrix_container(MatrixStack *container) {
+void initialize_matrix_container(MatrixStack *container) 
+{
     container->stackIndex = 0;
 }
 
 
-void push_matrix(MatrixStack *container, float matrix[3][3]) {
+void push_matrix(MatrixStack *container, float matrix[3][3]) 
+{
     if (container->stackIndex < 5) {
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 3; ++j) {
@@ -138,7 +141,8 @@ void push_matrix(MatrixStack *container, float matrix[3][3]) {
 }
 
 
-float (*pop_matrix(MatrixStack *container))[3][3] {
+float (*pop_matrix(MatrixStack *container))[3][3] 
+{
     if (container->stackIndex > 0) {
         container->stackIndex--;
         return &(container->matrices[container->stackIndex]);

@@ -9,6 +9,15 @@ typedef struct {
     float y;
     float w;
 } Dot;
+
+/**
+ * Structure containing transformation matrices simulating a stack-like behavior.
+*/
+typedef struct {
+    float matrices[5][3][3]; 
+    int stackIndex;          
+} MatrixStack;
+
 /**
  * Initializes all elements of the matrix to zero.
  */
